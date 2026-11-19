@@ -1,7 +1,7 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-// Paleta institucional IPET 249
+// Paleta institucional IPET 249 (bordó, amarillo, rojo y blanco)
 const PALETTE = {
   bordo: "#5A1224",
   bordoOscuro: "#2B0710",
@@ -19,7 +19,7 @@ const STATE = {
   GAME_OVER: "GAME_OVER"
 };
 
-// Carga del escudo institucional
+// Carga del escudo institucional del IPET 249
 const escudoImg = new Image();
 let escudoCargado = false;
 escudoImg.src = "assets/escudo-ipet249.png";
@@ -132,7 +132,7 @@ function spawnObstaclePair() {
     label: "LOOP"
   });
 
-  // Agregar una memoria RAM en el centro del hueco
+  // Memoria RAM coleccionable en el centro del hueco
   if (Math.random() < 0.65) {
     collectibles.push({
       x: canvas.width + 20 + obstacleWidth / 2 - 14,
@@ -145,7 +145,7 @@ function spawnObstaclePair() {
   }
 }
 
-// Colisión AABB (Axis-Aligned Bounding Box)
+// Detección de colisiones AABB (Axis-Aligned Bounding Box)
 function checkAABB(a, b) {
   return (
     a.x < b.x + b.width &&
@@ -277,6 +277,7 @@ function drawEscudo(x, y, height) {
     return;
   }
 
+  // Respaldo si el escudo aún no terminó de cargar
   ctx.save();
   ctx.translate(x + height / 2, y + height / 2);
   ctx.fillStyle = PALETTE.bordo;
@@ -473,3 +474,6 @@ canvas.addEventListener("pointerdown", () => {
 });
 
 requestAnimationFrame(gameLoop);
+```[cite: 6]
+
+Recordá que la imagen del escudo debe estar guardada en la carpeta `assets` como `escudo-ipet249.png` (respetando mayúsculas/minúsculas en Linux/GitHub Pages)[cite: 3, 6]. Si la guardaste con otro nombre, solo cambiá esa ruta en `escudoImg.src = "..."`[cite: 6].
