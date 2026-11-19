@@ -22,7 +22,7 @@ const STATE = {
 // Carga del escudo institucional del IPET 249
 const escudoImg = new Image();
 let escudoCargado = false;
-escudoImg.src = "assets/escudo-ipet249.png";
+escudoImg.src = "escudo-ipet249.png";
 escudoImg.onload = () => {
   escudoCargado = true;
 };
@@ -474,4 +474,3 @@ canvas.addEventListener("pointerdown", () => {
 });
 
 requestAnimationFrame(gameLoop);
-```[cite: 6]
