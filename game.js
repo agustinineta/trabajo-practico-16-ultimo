@@ -475,5 +475,3 @@ canvas.addEventListener("pointerdown", () => {
 
 requestAnimationFrame(gameLoop);
 ```[cite: 6]
-
-Recordá que la imagen del escudo debe estar guardada en la carpeta `assets` como `escudo-ipet249.png` (respetando mayúsculas/minúsculas en Linux/GitHub Pages)[cite: 3, 6]. Si la guardaste con otro nombre, solo cambiá esa ruta en `escudoImg.src = "..."`[cite: 6].
